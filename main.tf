@@ -93,4 +93,8 @@ resource "aws_instance" "this" {
   credit_specification {
     cpu_credits = local.is_t_instance_type ? var.cpu_credits : null
   }
+  
+  provisioner "local-exec" {
+    command = "echo local-exec"
+  }
 }
